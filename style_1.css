@@ -228,3 +228,117 @@ h2 {
     color: #4a3f3f;
     margin-top: 40px;
 }
+/* Overlay blur background */
+.overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 900;
+}
+
+/* Popup (used by BOTH login + signup) */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(20, 20, 20, 0.92);
+    color: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none;
+    opacity: 0;
+    transition: .3s ease;
+    z-index: 1000;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 24px;
+    color: #41d48d;
+    margin-bottom: 18px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: white;
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-pass {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.main-btn {
+    background: #41d48d;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: black;
+}
+
+.cancel-btn {
+    background: #555;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.footer-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.footer-link span {
+    color: #41d48d;
+    cursor: pointer;
+}
+
+/* Show animation */
+.show {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+}

@@ -6,8 +6,82 @@
     <title>Dreamy Delights - Cake Shop</title>
     <link rel="stylesheet" href="style_1.css" />
 </head>
-
 <body>
+    <!-- Overlay Background -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Login Popup -->
+<div class="popup" id="loginPopup">
+
+    <button class="close-btn" onclick="closePopup()">✖</button>
+
+    <h2 class="modal-title">Login</h2>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail">
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <div class="password-container">
+            <input type="password" id="loginPassword">
+            <span class="toggle-pass" onclick="togglePassword('loginPassword', this)">👁️</span>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button class="main-btn">Login</button>
+        <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+    </div>
+
+    <p class="footer-link">
+        don’t have an account ? 
+        <span onclick="switchPopup('signupPopup')">sign up now</span>
+    </p>
+
+</div>
+
+<!-- Signup Popup -->
+<div class="popup" id="signupPopup">
+
+    <button class="close-btn" onclick="closePopup()">✖</button>
+
+    <h2 class="modal-title">Signup</h2>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="signupEmail">
+    </div>
+
+    <div class="input-group">
+        <label>New Password</label>
+        <div class="password-container">
+            <input type="password" id="signupPass1">
+            <span class="toggle-pass" onclick="togglePassword('signupPass1', this)">👁️</span>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Confirm Password</label>
+        <div class="password-container">
+            <input type="password" id="signupPass2">
+            <span class="toggle-pass" onclick="togglePassword('signupPass2', this)">👁️</span>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button class="main-btn">Signup</button>
+        <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+    </div>
+
+    <p class="footer-link">
+        Already have an account ? 
+        <span onclick="switchPopup('loginPopup')">Login now</span>
+    </p>
+
+</div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">🍰 Dreamy Delights</div>

@@ -187,3 +187,39 @@ function loadCart() {
     }
 }
 loadCart();
+const overlay = document.getElementById("overlay");
+const loginPopup = document.getElementById("loginPopup");
+const signupPopup = document.getElementById("signupPopup");
+
+/* Open Popup (Login or Signup) */
+function openPopup(id) {
+    overlay.classList.add("show");
+    document.getElementById(id).classList.add("show");
+}
+
+/* Close all popups */
+function closePopup() {
+    overlay.classList.remove("show");
+    loginPopup.classList.remove("show");
+    signupPopup.classList.remove("show");
+}
+
+/* Switch Between Login <-> Signup */
+function switchPopup(id) {
+    loginPopup.classList.remove("show");
+    signupPopup.classList.remove("show");
+    document.getElementById(id).classList.add("show");
+}
+
+/* Password toggle */
+function togglePassword(inputId, icon) {
+    const field = document.getElementById(inputId);
+
+    if (field.type === "password") {
+        field.type = "text";
+        icon.textContent = "🙈";
+    } else {
+        field.type = "password";
+        icon.textContent = "👁️";
+    }
+}
