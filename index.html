@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style_1.css" />
 </head>
 <body>
-    <!-- Overlay Background -->
-<div class="overlay" id="overlay"></div>
+    <!-- Overlay -->
+<div id="overlay"></div>
 
 <!-- Login Popup -->
 <div class="popup" id="loginPopup">
 
-    <button class="close-btn" onclick="closePopup()">✖</button>
+    <button class="close-btn" onclick="closePopup()">×</button>
 
     <h2 class="modal-title">Login</h2>
 
@@ -26,9 +26,14 @@
         <label>Password</label>
         <div class="password-container">
             <input type="password" id="loginPassword">
-            <span class="toggle-pass" onclick="togglePassword('loginPassword', this)">👁️</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" 
+                 class="eye-icon" onclick="togglePassword('loginPassword', this)">
         </div>
     </div>
+
+    <label class="remember">
+        <input type="checkbox" id="rememberMe"> Remember Email
+    </label>
 
     <div class="btn-group">
         <button class="main-btn">Login</button>
@@ -36,7 +41,7 @@
     </div>
 
     <p class="footer-link">
-        don’t have an account ? 
+        don't have an account?
         <span onclick="switchPopup('signupPopup')">sign up now</span>
     </p>
 
@@ -45,7 +50,7 @@
 <!-- Signup Popup -->
 <div class="popup" id="signupPopup">
 
-    <button class="close-btn" onclick="closePopup()">✖</button>
+    <button class="close-btn" onclick="closePopup()">×</button>
 
     <h2 class="modal-title">Signup</h2>
 
@@ -55,10 +60,11 @@
     </div>
 
     <div class="input-group">
-        <label>New Password</label>
+        <label>Create Password</label>
         <div class="password-container">
             <input type="password" id="signupPass1">
-            <span class="toggle-pass" onclick="togglePassword('signupPass1', this)">👁️</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" 
+                 class="eye-icon" onclick="togglePassword('signupPass1', this)">
         </div>
     </div>
 
@@ -66,7 +72,8 @@
         <label>Confirm Password</label>
         <div class="password-container">
             <input type="password" id="signupPass2">
-            <span class="toggle-pass" onclick="togglePassword('signupPass2', this)">👁️</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" 
+                 class="eye-icon" onclick="togglePassword('signupPass2', this)">
         </div>
     </div>
 
@@ -76,8 +83,8 @@
     </div>
 
     <p class="footer-link">
-        Already have an account ? 
-        <span onclick="switchPopup('loginPopup')">Login now</span>
+        already have an account?
+        <span onclick="switchPopup('loginPopup')">login now</span>
     </p>
 
 </div>
@@ -85,7 +92,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">🍰 Dreamy Delights</div>
-        
+
         <div class="search-bar">
             <input type="text" placeholder="Search cakes, pastries..." />
         </div>

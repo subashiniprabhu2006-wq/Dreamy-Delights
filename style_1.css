@@ -228,117 +228,144 @@ h2 {
     color: #4a3f3f;
     margin-top: 40px;
 }
-/* Overlay blur background */
-.overlay {
+/*login button*/
+/* Overlay */
+#overlay {
     position: fixed;
     inset: 0;
+    background: rgba(0,0,0,0.55);
     backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.45);
     display: none;
     z-index: 900;
 }
 
-/* Popup (used by BOTH login + signup) */
+/* Popup Box */
 .popup {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    background: rgba(20, 20, 20, 0.92);
-    color: white;
-    width: 320px;
-    padding: 25px;
+    width: 350px;
+    background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: none;
+    transform: translate(-50%, -50%) scale(0.8);
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    padding: 25px;
     opacity: 0;
-    transition: .3s ease;
+    display: none;
+    transition: 0.25s ease;
     z-index: 1000;
 }
 
-.modal-title {
-    text-align: center;
-    font-size: 24px;
-    color: #41d48d;
-    margin-bottom: 18px;
+/* Show animation */
+.popup.show {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1);
 }
 
+/* Title */
+.modal-title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff4fa8; /* Elegant pink */
+}
+
+/* Close Button */
 .close-btn {
     position: absolute;
     right: 12px;
     top: 12px;
+    font-size: 22px;
     background: none;
     border: none;
-    font-size: 18px;
-    color: white;
     cursor: pointer;
+    color: #333;
 }
 
-/* Inputs */
-.input-group {
-    margin-bottom: 15px;
+/* Input Fields */
+.input-group label {
+    font-size: 15px;
+    color: #444;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 10px;
-    border: none;
-    outline: none;
-    background: #222;
-    color: white;
+    border: 1px solid #e3e3e3;
+    background: #fdfdfd;
+    margin-top: 5px;
+    font-size: 14px;
 }
 
+/* Password Eye Icon */
 .password-container {
     position: relative;
 }
 
-.toggle-pass {
+.eye-icon {
+    width: 20px;
     position: absolute;
     right: 12px;
-    top: 10px;
+    top: 12px;
     cursor: pointer;
+    opacity: 0.6;
+}
+
+.eye-icon:hover {
+    opacity: 1;
 }
 
 /* Buttons */
 .btn-group {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 18px;
 }
 
 .main-btn {
-    background: #41d48d;
-    padding: 10px 22px;
-    border-radius: 10px;
+    background: #ff4fa8;
     border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
     cursor: pointer;
-    color: black;
+    font-weight: bold;
 }
 
 .cancel-btn {
-    background: #555;
-    padding: 10px 22px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
+    background: #111;
     color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
+/* Remember checkbox */
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* Footer link */
 .footer-link {
     text-align: center;
-    margin-top: 15px;
-    font-size: 13px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #444;
 }
 
 .footer-link span {
-    color: #41d48d;
+    color: #ff4fa8;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/* Show animation */
-.show {
-    display: block !important;
-    opacity: 1 !important;
-    transform: translate(-50%, -50%) scale(1) !important;
-}
