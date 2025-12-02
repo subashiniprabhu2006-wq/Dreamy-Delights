@@ -187,39 +187,60 @@ function loadCart() {
     }
 }
 loadCart();
+//login button
 const overlay = document.getElementById("overlay");
 const loginPopup = document.getElementById("loginPopup");
 const signupPopup = document.getElementById("signupPopup");
 
-/* Open Popup (Login or Signup) */
+/* OPEN POPUP */
 function openPopup(id) {
-    overlay.classList.add("show");
+    overlay.style.display = "block";
     document.getElementById(id).classList.add("show");
+
+    if (id === "loginPopup") {
+        const savedEmail = localStorage.getItem("savedEmail");
+        if (savedEmail) {
+            document.getElementById("loginEmail").value = savedEmail;
+            document.getElementById("rememberMe").checked = true;
+        }
+    }
 }
 
-/* Close all popups */
+/* CLOSE POPUP */
 function closePopup() {
-    overlay.classList.remove("show");
+    overlay.style.display = "none";
     loginPopup.classList.remove("show");
     signupPopup.classList.remove("show");
 }
 
-/* Switch Between Login <-> Signup */
+/* SWITCH BETWEEN LOGIN <-> SIGNUP */
 function switchPopup(id) {
     loginPopup.classList.remove("show");
     signupPopup.classList.remove("show");
     document.getElementById(id).classList.add("show");
 }
 
-/* Password toggle */
+/* PASSWORD TOGGLE */
 function togglePassword(inputId, icon) {
     const field = document.getElementById(inputId);
 
     if (field.type === "password") {
         field.type = "text";
-        icon.textContent = "🙈";
+        icon.style.opacity = "1";
     } else {
         field.type = "password";
-        icon.textContent = "👁️";
+        icon.style.opacity = "0.6";
     }
 }
+
+/* SAVE EMAIL */
+document.querySelector(".main-btn").addEventListener("click", () => {
+    const email = document.getElementById("loginEmail").value;
+    const save = document.getElementById("rememberMe").checked;
+
+    if (save) {
+        localStorage.setItem("savedEmail", email);
+    } else {
+        localStorage.removeItem("savedEmail");
+    }
+});
