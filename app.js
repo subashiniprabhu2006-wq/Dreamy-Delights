@@ -1,3 +1,17 @@
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"; import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"; 
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDxv_eUe19oFkjg0EO3wOyJ9VwfFggBMLI",
+    authDomain: "cakeecommercesite.firebaseapp.com",
+    projectId: "cakeecommercesite",
+    storageBucket: "cakeecommercesite.firebasestorage.app",
+    messagingSenderId: "1098537775636",
+    appId: "1:1098537775636:web:f22f56f07393a1a0bfad01"
+  };
 // CART ARRAY
 let cart = [];
 
