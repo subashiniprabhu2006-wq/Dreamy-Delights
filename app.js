@@ -31,10 +31,6 @@ function toggleCart() {
     cartPopup.classList.toggle("open");
     renderCart();
 };
-function openPopup(id) {
-    overlay.style.display = "block";
-    document.getElementById(id).classList.add("show");
-}
 
 
 // AUTO ADD CART BUTTON IF MISSING
@@ -295,3 +291,10 @@ function signupUser() {
         .catch(error => alert(error.message));
 
 }
+window.toggleCart = toggleCart;
+window.openPopup = openPopup;
+window.closePopup = closePopup;
+window.switchPopup = switchPopup;
+window.togglePassword = togglePassword;
+window.loginUser = loginUser;
+window.signupUser = signupUser;
