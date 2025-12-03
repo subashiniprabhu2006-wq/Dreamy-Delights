@@ -263,7 +263,7 @@ function loginUser() {
     } else {
         localStorage.removeItem("savedEmail");
     }
-
+    // auth
     signInWithEmailAndPassword(auth, email, pass)
         .then(() => {
             alert("Logged in successfully!");
