@@ -269,7 +269,8 @@ function loginUser() {
             document.getElementById("userNameDisplay").textContent = email;
             closePopup();
         })
-        .catch(error => handleFirebaseError(error));
+        .catch(error => alert(error.message));
+
 }
 function signupUser() {
     const email = document.getElementById("signupEmail").value;
@@ -286,5 +287,6 @@ function signupUser() {
             alert("Signup successful! Please login.");
             switchPopup("loginPopup");
         })
-        .catch(error => handleFirebaseError(error));
+        .catch(error => alert(error.message));
+
 }

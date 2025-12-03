@@ -6,11 +6,13 @@
     <title>Dreamy Delights - Cake Shop</title>
     <link rel="stylesheet" href="style_1.css" />
 </head>
+
 <body>
-    <!-- Overlay -->
+
+<!-- Overlay -->
 <div id="overlay"></div>
 
-<!-- Login Popup -->
+<!-- LOGIN POPUP -->
 <div class="popup" id="loginPopup">
 
     <button class="close-btn" onclick="closePopup()">×</button>
@@ -27,9 +29,9 @@
         <div class="password-container">
             <input type="password" id="loginPassword">
             <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
-                class="eye-icon" onclick="togglePassword('loginPassword', this)">   
+                 class="eye-icon"
+                 onclick="togglePassword('loginPassword', this)">
         </div>
-        
     </div>
 
     <label class="remember">
@@ -37,19 +39,18 @@
     </label>
 
     <div class="btn-group">
-        <button class="main-btn">Login</button>
+        <button class="main-btn" onclick="loginUser()">Login</button>
         <button class="cancel-btn" onclick="closePopup()">Cancel</button>
     </div>
 
     <p class="footer-link">
-        don't have an account?
-        <span onclick="switchPopup('signupPopup')">sign up now</span>
+        Don't have an account?
+        <span onclick="switchPopup('signupPopup')">Sign up now</span>
     </p>
-    <button class="main-btn" onclick="loginUser()">Login</button>
 
 </div>
 
-<!-- Signup Popup -->
+<!-- SIGNUP POPUP -->
 <div class="popup" id="signupPopup">
 
     <button class="close-btn" onclick="closePopup()">×</button>
@@ -65,9 +66,10 @@
         <label>Create Password</label>
         <div class="password-container">
             <input type="password" id="signupPass1">
+            <!-- FIXED ID -->
             <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
-                class="eye-icon" onclick="togglePassword('loginPassword', this)">
-
+                 class="eye-icon"
+                 onclick="togglePassword('signupPass1', this)">
         </div>
     </div>
 
@@ -75,185 +77,192 @@
         <label>Confirm Password</label>
         <div class="password-container">
             <input type="password" id="signupPass2">
+            <!-- FIXED ID -->
             <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
-                class="eye-icon" onclick="togglePassword('loginPassword', this)">
-
+                 class="eye-icon"
+                 onclick="togglePassword('signupPass2', this)">
         </div>
     </div>
 
     <div class="btn-group">
-        <button class="main-btn">Signup</button>
+        <button class="main-btn" onclick="signupUser()">Signup</button>
         <button class="cancel-btn" onclick="closePopup()">Cancel</button>
     </div>
 
     <p class="footer-link">
-        already have an account?
-        <span onclick="switchPopup('loginPopup')">login now</span>
+        Already have an account?
+        <span onclick="switchPopup('loginPopup')">Login now</span>
     </p>
-    <button class="main-btn" onclick="signupUser()">Signup</button>
 
 </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">🍰 Dreamy Delights</div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🍰 Dreamy Delights</div>
 
-        <div class="search-bar">
-            <input type="text" placeholder="Search cakes, pastries..." />
+    <div class="search-bar">
+        <input type="text" placeholder="Search cakes, pastries..." />
+    </div>
+
+    <div class="nav-icons">
+        <button class="login-btn" onclick="openPopup('loginPopup')">Login</button>
+        <span id="userNameDisplay" class="user-display"></span>
+
+        <div class="cart" onclick="toggleCart()">🛒
+            <span id="cartBadge" class="cart-badge">0</span>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Dreamy Delights</h1>
+        <p>Where Every Bite Feels Like a Dream</p>
+    </div>
+</header>
+
+<!-- PRODUCTS -->
+<section class="products">
+    <h2>Cakes</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="./assets/choco truffle.jpg" alt="Chocolate Truffle" />
+            <h3>Chocolate Truffle Cake</h3>
+            <p class="price">799</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
 
-        <div class="nav-icons">
-            <button class="login-btn" onclick="openPopup('loginPopup')">Login</button>
-            <span id="userNameDisplay" class="user-display"></span>
-            <div class="cart">🛒</div>
+        <div class="product-card">
+            <img src="./assets/redvelvet.jpg" alt="Red Velvet" />
+            <h3>Red Velvet Cake</h3>
+            <p class="price">899</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
-    </nav>
 
-    <!-- Hero Banner -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Dreamy Delights</h1>
-            <p>Where Every Bite Feels Like a Dream</p>
+        <div class="product-card">
+            <img src="./assets/butterschotch.jpg" alt="Butterscotch" />
+            <h3>Butterscotch Cake</h3>
+            <p class="price">749</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
-    </header>
-    
-    <!-- Products Section -->
-    <section class="products">
-        <h2>Cakes</h2>
 
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="./assets/choco truffle.jpg" alt="Chocolate Truffle" />
-                <h3>Chocolate Truffle Cake</h3>
-                <p>₹799</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/redvelvet.jpg" alt="Red Velvet" />
-                <h3>Red Velvet Cake</h3>
-                <p>₹899</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/butterschotch.jpg" alt="Butterscotch" />
-                <h3>Butterscotch Cake</h3>
-                <p>₹749</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/blueberry.jpg" alt="Blueberry" />
-                <h3>Blueberry Cake</h3>
-                <p>₹999</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
+        <div class="product-card">
+            <img src="./assets/blueberry.jpg" alt="Blueberry" />
+            <h3>Blueberry Cake</h3>
+            <p class="price">999</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
-    </section>
 
-    <!-- Trending Cakes -->
-    <section class="trending">
-        <h2>Trending Cakes</h2>
+    </div>
+</section>
 
-        <div class="product-grid">
+<!-- TRENDING -->
+<section class="trending">
+    <h2>Trending Cakes</h2>
 
-            <div class="product-card">
-                <img src="./assets/ferro.jpg" alt="Ferrero Rocher" />
-                <h3>Ferrero Rocher Cake</h3>
-                <p>₹1299</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
+    <div class="product-grid">
 
-            <div class="product-card">
-                <img src="./assets/rainbow.jpg" alt="Rainbow Layer" />
-                <h3>Rainbow Layer Cake</h3>
-                <p>₹1499</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/nutella.jpg" alt="Nutella Cake" />
-                <h3>Nutella Cake</h3>
-                <p>₹1399</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/rosemilk.jpg" alt="Rosemilk Cake" />
-                <h3>Rosemilk Cake</h3>
-                <p>₹999</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
+        <div class="product-card">
+            <img src="./assets/ferro.jpg" alt="Ferrero Rocher" />
+            <h3>Ferrero Rocher Cake</h3>
+            <p class="price">1299</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
-    </section>
 
-    <!-- New Arrivals -->
-    <section class="new-arrivals">
-        <h2>New Arrivals</h2>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="./assets/strwaberry.jpg" alt="Strawberry Cheesecake" />
-                <h3>Strawberry Cheesecake</h3>
-                <p>₹1099</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/caramel.jpg" alt="Caramel Almond" />
-                <h3>Caramel Almond Cake</h3>
-                <p>₹1199</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/cakes.jpg" alt="Mango Cream" />
-                <h3>Mango Cream Cake</h3>
-                <p>₹999</p>
-                <button class="add-btn">Add to Cart</button>
-            </div>
-
+        <div class="product-card">
+            <img src="./assets/rainbow.jpg" alt="Rainbow Layer" />
+            <h3>Rainbow Layer Cake</hh3>
+            <p class="price">1499</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
-    </section>
 
-    <!-- Customer Reviews -->
-    <section class="reviews">
-        <h2>Customer Reviews</h2>
-
-        <div class="review-grid">
-            <div class="review-card">
-                <h3>Priya S</h3>
-                <p>⭐⭐⭐⭐⭐</p>
-                <p>"Amazing taste and super fast delivery!"</p>
-            </div>
-
-            <div class="review-card">
-                <h3>Arjun K</h3>
-                <p>⭐⭐⭐⭐</p>
-                <p>"Loved the Red Velvet cake. Very fresh!"</p>
-            </div>
-
-            <div class="review-card">
-                <h3>Sneha R</h3>
-                <p>⭐⭐⭐⭐⭐</p>
-                <p>"Great packaging and delicious flavors."</p>
-            </div>
+        <div class="product-card">
+            <img src="./assets/nutella.jpg" alt="Nutella" />
+            <h3>Nutella Cake</h3>
+            <p class="price">1399</p>
+            <button class="add-btn">Add to Cart</button>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <h3>Contact Us</h3>
-        <p>Dreamy Delights Cake Shop</p>
-        <p>123 Sweet Street, Bakery Town</p>
-        <p>Phone: +91 98765 43210</p>
-    </footer>
-    
-    <script src="./app.js"></script>
+        <div class="product-card">
+            <img src="./assets/rosemilk.jpg" alt="Rosemilk" />
+            <h3>Rosemilk Cake</h3>
+            <p class="price">999</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section class="new-arrivals">
+    <h2>New Arrivals</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="./assets/strwaberry.jpg" alt="Strawberry Cheesecake" />
+            <h3>Strawberry Cheesecake</h3>
+            <p class="price">1099</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="./assets/caramel.jpg" alt="Caramel Almond" />
+            <h3>Caramel Almond Cake</h3>
+            <p class="price">1199</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="./assets/cakes.jpg" alt="Mango Cream" />
+            <h3>Mango Cream Cake</h3>
+            <p class="price">999</p>
+            <button class="add-btn">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+
+    <div class="review-grid">
+
+        <div class="review-card">
+            <h3>Priya S</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Amazing taste and super fast delivery!"</p>
+        </div>
+
+        <div class="review-card">
+            <h3>Arjun K</h3>
+            <p>⭐⭐⭐⭐</p>
+            <p>"Loved the Red Velvet cake. Very fresh!"</p>
+        </div>
+
+        <div class="review-card">
+            <h3>Sneha R</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Great packaging and delicious flavors."</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <h3>Contact Us</h3>
+    <p>Dreamy Delights Cake Shop</p>
+    <p>123 Sweet Street, Bakery Town</p>
+    <p>Phone: +91 98765 43210</p>
+</footer>
+
+<!-- FIXED SCRIPT (MUST be module) -->
+<script src="./app.js" type="module"></script>
+
 </body>
 </html>
