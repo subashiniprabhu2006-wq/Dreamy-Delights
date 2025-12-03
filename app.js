@@ -12,6 +12,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebas
     messagingSenderId: "1098537775636",
     appId: "1:1098537775636:web:f22f56f07393a1a0bfad01"
   };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 // CART ARRAY
 let cart = [];
 
