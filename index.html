@@ -26,8 +26,9 @@
         <label>Password</label>
         <div class="password-container">
             <input type="password" id="loginPassword">
-            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" 
-                 class="eye-icon" onclick="togglePassword('loginPassword', this)">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
+                class="eye-icon" onclick="togglePassword('loginPassword', this)">
+
         </div>
     </div>
 
@@ -44,6 +45,7 @@
         don't have an account?
         <span onclick="switchPopup('signupPopup')">sign up now</span>
     </p>
+    <button class="main-btn" onclick="loginUser()">Login</button>
 
 </div>
 
@@ -63,8 +65,9 @@
         <label>Create Password</label>
         <div class="password-container">
             <input type="password" id="signupPass1">
-            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" 
-                 class="eye-icon" onclick="togglePassword('signupPass1', this)">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
+                class="eye-icon" onclick="togglePassword('loginPassword', this)">
+
         </div>
     </div>
 
@@ -72,8 +75,9 @@
         <label>Confirm Password</label>
         <div class="password-container">
             <input type="password" id="signupPass2">
-            <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" 
-                 class="eye-icon" onclick="togglePassword('signupPass2', this)">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png"
+                class="eye-icon" onclick="togglePassword('loginPassword', this)">
+
         </div>
     </div>
 
@@ -86,6 +90,7 @@
         already have an account?
         <span onclick="switchPopup('loginPopup')">login now</span>
     </p>
+    <button class="main-btn" onclick="signupUser()">Signup</button>
 
 </div>
 
@@ -99,6 +104,7 @@
 
         <div class="nav-icons">
             <button class="login-btn" onclick="openPopup('loginPopup')">Login</button>
+            <span id="userNameDisplay" class="user-display"></span>
             <div class="cart">🛒</div>
         </div>
     </nav>

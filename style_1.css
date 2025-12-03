@@ -303,20 +303,32 @@ h2 {
 /* Password Eye Icon */
 .password-container {
     position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 12px 42px 12px 12px;  /* extra right padding for icon */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
 }
 
 .eye-icon {
-    width: 20px;
+    width: 22px;
+    height: 22px;
     position: absolute;
     right: 12px;
-    top: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .eye-icon:hover {
     opacity: 1;
 }
+
 
 /* Buttons */
 .btn-group {
@@ -367,5 +379,11 @@ h2 {
     color: #ff4fa8;
     cursor: pointer;
     font-weight: bold;
+}
+.user-display {
+    margin-left: 12px;
+    font-weight: bold;
+    color: #ff4fa8; /* pink theme */
+    font-size: 15px;
 }
 

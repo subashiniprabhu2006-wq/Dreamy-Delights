@@ -240,10 +240,10 @@ function togglePassword(inputId, icon) {
 
     if (field.type === "password") {
         field.type = "text";
-        icon.style.opacity = "1";
+        icon.src = "https://cdn-icons-png.flaticon.com/512/2767/2767146.png"; // closed eye
     } else {
         field.type = "password";
-        icon.style.opacity = "0.6";
+        icon.src = "https://cdn-icons-png.flaticon.com/512/709/709612.png"; // open eye
     }
 }
 
