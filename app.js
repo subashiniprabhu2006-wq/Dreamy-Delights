@@ -248,21 +248,40 @@ function togglePassword(inputId, icon) {
 }
 
 /* SAVE EMAIL */
+
 function loginUser() {
     const email = document.getElementById("loginEmail").value;
     const pass = document.getElementById("loginPassword").value;
 
-    // Save only email (NOT password)
+    // Save only email
     if (document.getElementById("rememberMe").checked) {
         localStorage.setItem("savedEmail", email);
     } else {
         localStorage.removeItem("savedEmail");
     }
 
-    alert("Logged in successfully!");
+    signInWithEmailAndPassword(auth, email, pass)
+        .then(() => {
+            alert("Logged in successfully!");
+            document.getElementById("userNameDisplay").textContent = email;
+            closePopup();
+        })
+        .catch(error => handleFirebaseError(error));
+}
+function signupUser() {
+    const email = document.getElementById("signupEmail").value;
+    const p1 = document.getElementById("signupPass1").value;
+    const p2 = document.getElementById("signupPass2").value;
 
-    // Show username on navbar
-    document.getElementById("userNameDisplay").textContent = email;
+    if (p1 !== p2) {
+        alert("Passwords do not match!");
+        return;
+    }
 
-    closePopup();
+    createUserWithEmailAndPassword(auth, email, p1)
+        .then(() => {
+            alert("Signup successful! Please login.");
+            switchPopup("loginPopup");
+        })
+        .catch(error => handleFirebaseError(error));
 }
