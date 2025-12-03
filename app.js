@@ -27,10 +27,15 @@ cartPopup.classList.add("cart-popup");
 document.body.appendChild(cartPopup);
 
 // OPEN/CLOSE CART
-cartBtn.addEventListener("click", () => {
+function toggleCart() {
     cartPopup.classList.toggle("open");
     renderCart();
-});
+};
+function openPopup(id) {
+    overlay.style.display = "block";
+    document.getElementById(id).classList.add("show");
+}
+
 
 // AUTO ADD CART BUTTON IF MISSING
 productCards.forEach((card) => {
