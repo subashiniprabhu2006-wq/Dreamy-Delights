@@ -286,7 +286,7 @@ h2 {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #ff4fa8; /* Elegant pink */
+    color: #524fff; /* Elegant pink */
 }
 
 /* Close Button */
@@ -400,7 +400,7 @@ h2 {
 .user-display {
     margin-left: 12px;
     font-weight: bold;
-    color: #ff4fa8; /* pink theme */
+    color: hsl(245, 93%, 48%); 
     font-size: 15px;
 }
 
