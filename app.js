@@ -248,13 +248,21 @@ function togglePassword(inputId, icon) {
 }
 
 /* SAVE EMAIL */
-document.querySelector(".main-btn").addEventListener("click", () => {
+function loginUser() {
     const email = document.getElementById("loginEmail").value;
-    const save = document.getElementById("rememberMe").checked;
+    const pass = document.getElementById("loginPassword").value;
 
-    if (save) {
+    // Save only email (NOT password)
+    if (document.getElementById("rememberMe").checked) {
         localStorage.setItem("savedEmail", email);
     } else {
         localStorage.removeItem("savedEmail");
     }
-});
+
+    alert("Logged in successfully!");
+
+    // Show username on navbar
+    document.getElementById("userNameDisplay").textContent = email;
+
+    closePopup();
+}
